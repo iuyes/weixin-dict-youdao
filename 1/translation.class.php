@@ -1,5 +1,4 @@
 <?php
-
 require_once 'config.inc.php';
 class Translation{
 		
@@ -59,7 +58,8 @@ class Translation{
 						  $web_translation_0." ; ".
 						  $web_translation_1." ; ".
 						  $web_translation_2." ; ".
-						  "词组：\r\n".$web_phrase_0."：\r\n".
+						  "\r\n\r\n"."词组："."\r\n"
+                		  .$web_phrase_0."：\r\n".
 						  $web_phrase_0_translation_0."\r\n".
 						  $web_phrase_0_translation_1."\r\n".
 						  $web_phrase_0_translation_2."\r\n".

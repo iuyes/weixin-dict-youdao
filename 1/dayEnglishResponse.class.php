@@ -14,6 +14,7 @@ class DayEnglishResponse {
 	public function __construct () {
 		$this->getPostData();		
 		$this->result_string = $this->getResultString();
+	
 	}
 	
 	public function valid () {
@@ -25,6 +26,7 @@ class DayEnglishResponse {
         	exit;
         }
     }
+
 
     public function responseMsg () {
 		
@@ -38,7 +40,7 @@ class DayEnglishResponse {
 					<FuncFlag>0</FuncFlag>
 					</xml>";             
 		
-		$resultXml = sprintf($resultTpl, $this->toUsername, $this->fromUsername, $time, TEXT, is_string($this->msgtype));
+		$resultXml = sprintf($resultTpl, $this->toUsername, $this->fromUsername, $time, TEXT, $this->result_string);
         
         echo $resultXml;
     }
@@ -72,8 +74,8 @@ class DayEnglishResponse {
 			$this->toUsername = $postObj->FromUserName;
 			$this->fromUsername = $postObj->ToUserName;
 			$this->keyword = trim($postObj->Content);
-			$this->msgtype = $postObj->MsgType;
-			$this->event = $postObj->Event;
+			$this->msgtype = trim($postObj->MsgType);
+			$this->event = trim($postObj->Event);
 		} else {
 			echo "";
 			exit;
